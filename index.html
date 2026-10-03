@@ -1222,6 +1222,18 @@
       <span class="material-symbols-outlined text-[19px] group-hover:-translate-y-0.5 transition-transform">keyboard_arrow_up</span>
     </button>
 
+    <!-- Floating Royal Wedding Music Player Toggle Button (Bottom-Left) -->
+    <button id="floatingMusicBtn" aria-label="Toggle Wedding Music"
+      class="fixed bottom-4 left-4 sm:left-[max(1rem,calc(50%-220px))] z-40 w-9 h-9 rounded-full bg-gradient-to-tr from-primary to-[#2e050c] text-[#fed488] border border-secondary/40 shadow-[0_4px_16px_rgba(64,7,16,0.35)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all group"
+      title="Play / Pause Wedding Music">
+      <span id="floatingMusicIcon" class="material-symbols-outlined text-[19px] transition-transform">music_note</span>
+    </button>
+
+    <!-- Background Royal Shehnai Wedding Audio -->
+    <audio id="weddingAudio" loop preload="auto">
+      <source src="./assets/audio/wedding_music.mp3" type="audio/mpeg">
+    </audio>
+
   </div>
 
   <!-- ========================================== -->
@@ -1836,76 +1848,80 @@
     }
 
     // ------------------------------------------
-    // 9. TRADITIONAL AMBIENT WEDDING MUSIC (WEB AUDIO SYNTHESIZER)
-    // Plays a tranquil Raag Kalyani / Yaman Tanpura harmony
+    // 9. TRADITIONAL ROYAL WEDDING MUSIC (AUTHENTIC SHEHNAI & MANGALA VADYAM)
     // ------------------------------------------
-    let audioCtx = null;
     let isPlaying = false;
-    let synthTimer = null;
+    const weddingAudio = document.getElementById("weddingAudio");
+    const floatingMusicBtn = document.getElementById("floatingMusicBtn");
+    const floatingMusicIcon = document.getElementById("floatingMusicIcon");
     const musicBtn = document.getElementById("musicToggleBtn");
     const musicIcon = document.getElementById("musicIcon");
 
-    const ragaNotes = [220, 247.5, 277.2, 311.1, 330, 370, 415.3, 440];
+    if (weddingAudio) {
+      weddingAudio.volume = 0.65;
+    }
 
-    function playNote(freq, duration = 2.5, gainLevel = 0.08) {
-      if (!audioCtx) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-
-      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(gainLevel, audioCtx.currentTime + 0.3);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
+    function updateMusicUI(playing) {
+      if (floatingMusicBtn && floatingMusicIcon) {
+        if (playing) {
+          floatingMusicBtn.classList.add("ring-2", "ring-[#fed488]/80", "shadow-[0_0_15px_rgba(254,212,136,0.5)]");
+          floatingMusicIcon.textContent = "music_note";
+          floatingMusicBtn.setAttribute("title", "Pause Wedding Shehnai");
+        } else {
+          floatingMusicBtn.classList.remove("ring-2", "ring-[#fed488]/80", "shadow-[0_0_15px_rgba(254,212,136,0.5)]");
+          floatingMusicIcon.textContent = "music_off";
+          floatingMusicBtn.setAttribute("title", "Play Wedding Shehnai");
+        }
+      }
+      if (musicBtn && musicIcon) {
+        if (playing) {
+          musicBtn.classList.add("bg-secondary-container", "pulse-playing");
+          musicIcon.textContent = "volume_up";
+        } else {
+          musicBtn.classList.remove("bg-secondary-container", "pulse-playing");
+          musicIcon.textContent = "music_note";
+        }
+      }
     }
 
     function startMusic() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (!weddingAudio) return;
+      const playPromise = weddingAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          isPlaying = true;
+          updateMusicUI(true);
+          showToast("Playing Royal Shehnai Melodies 🎶", "music_note");
+        }).catch((err) => {
+          console.warn("Audio autoplay blocked by browser policy:", err);
+          isPlaying = false;
+          updateMusicUI(false);
+        });
       }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      isPlaying = true;
-      musicBtn.classList.add("bg-secondary-container", "pulse-playing");
-      musicIcon.textContent = "volume_up";
-      showToast("Playing Wedding Melodies 🎵", "music_note");
-
-      let step = 0;
-      function loop() {
-        if (!isPlaying) return;
-        const note = ragaNotes[step % ragaNotes.length];
-        playNote(note, 3.2, 0.06);
-        playNote(note * 0.5, 4.0, 0.04);
-        step = (step + 1);
-        synthTimer = setTimeout(loop, 900);
-      }
-      loop();
     }
 
     function stopMusic() {
+      if (!weddingAudio) return;
+      weddingAudio.pause();
       isPlaying = false;
-      if (synthTimer) clearTimeout(synthTimer);
-      musicBtn.classList.remove("bg-secondary-container", "pulse-playing");
-      musicIcon.textContent = "music_note";
+      updateMusicUI(false);
       showToast("Music Paused", "volume_off");
     }
 
-    musicBtn.addEventListener("click", () => {
+    function toggleMusic() {
       if (isPlaying) {
         stopMusic();
       } else {
         startMusic();
       }
-    });
+    }
+
+    if (floatingMusicBtn) {
+      floatingMusicBtn.addEventListener("click", toggleMusic);
+    }
+    if (musicBtn) {
+      musicBtn.addEventListener("click", toggleMusic);
+    }
 
     // ------------------------------------------
     // 10. FLOWER PETAL SHOWER EFFECT
