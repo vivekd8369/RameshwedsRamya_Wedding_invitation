@@ -108,7 +108,7 @@
     /* Enhanced Royal Carousel Transitions & Animations */
     .carousel-track {
       display: flex;
-      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
       will-change: transform;
     }
 
@@ -120,13 +120,13 @@
     }
 
     .carousel-slide img {
-      transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+      transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
       transform: scale(1);
       will-change: transform;
     }
 
     .carousel-slide.active-slide img {
-      transform: scale(1.055);
+      transform: scale(1.06);
     }
 
     .slide-caption-box {
@@ -1197,6 +1197,11 @@
       if (typeof triggerPetalBurst === "function") {
         triggerPetalBurst();
       }
+
+      // Ensure carousel 2-second auto-changing is active
+      if (typeof startAutoPlay === "function") {
+        startAutoPlay();
+      }
     }
 
     // Keyboard accessibility: Enter, Space, or Escape also explores
@@ -1254,7 +1259,7 @@
     let currentSlide = 0;
     const totalSlides = galleryItems.length;
     let autoPlayTimer = null;
-    const slideDuration = 4500; // 4.5 seconds per slide
+    const slideDuration = 2000; // 2 seconds per slide as requested
 
     function goToSlide(index) {
       if (index < 0) {
@@ -1377,14 +1382,17 @@
       }
     }
 
-    // Auto Play
+    // Auto Play (Continuous 2-second auto-changing)
     function startAutoPlay() {
       stopAutoPlay();
       autoPlayTimer = setInterval(nextSlide, slideDuration);
     }
 
     function stopAutoPlay() {
-      if (autoPlayTimer) clearInterval(autoPlayTimer);
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
     }
 
     function resetAutoPlay() {
@@ -1392,11 +1400,7 @@
       startAutoPlay();
     }
 
-    if (carouselWrapper) {
-      carouselWrapper.addEventListener("mouseenter", stopAutoPlay);
-      carouselWrapper.addEventListener("mouseleave", startAutoPlay);
-    }
-
+    // Start carousel at first slide and initiate 2-second auto play
     goToSlide(0);
     startAutoPlay();
 
