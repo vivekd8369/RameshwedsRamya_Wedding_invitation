@@ -1021,39 +1021,6 @@
               </button>
             </div>
 
-            <!-- Travel Hints -->
-            <div class="pt-3.5 border-t border-outline-variant/20 text-left space-y-2.5">
-              <span class="block font-label-caps text-[10px] uppercase tracking-wider text-secondary font-bold">Travel
-                Directions</span>
-
-              <div
-                class="p-2.5 bg-surface-container-low/60 rounded-xl border border-outline-variant/20 space-y-2 text-[12px] text-on-surface-variant">
-                <div class="flex items-start gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">flight</span>
-                  <div>
-                    <span class="font-medium text-on-surface">Airport:</span> Kempegowda Intl Airport (BLR) is ~45 km
-                    (~50 mins drive).
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">train</span>
-                  <div>
-                    <span class="font-medium text-on-surface">Train:</span> Nearest stations at Doddaballapura (DDB)
-                    &amp; Gauribidanur (GBD).
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">directions_car</span>
-                  <div>
-                    <span class="font-medium text-on-surface">Road:</span> Directly accessible via State Highway 9 with
-                    ample hall parking.
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
 
         </section>
@@ -1337,7 +1304,12 @@
         if (idx === currentSlide) {
           thumb.classList.add("active-thumb");
           thumb.classList.remove("opacity-70");
-          thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          // Safely scroll ONLY within the horizontal thumbnail strip, NEVER the entire window/page
+          const container = thumb.parentElement;
+          if (container && container.scrollWidth > container.clientWidth) {
+            const targetLeft = thumb.offsetLeft - (container.clientWidth / 2) + (thumb.clientWidth / 2);
+            container.scrollTo({ left: targetLeft, behavior: 'smooth' });
+          }
         } else {
           thumb.classList.remove("active-thumb");
           thumb.classList.add("opacity-70");
