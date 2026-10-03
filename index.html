@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport">
+  <title>Ramesh T &amp; Ramya HM | Wedding Invitation</title>
+  <meta name="description"
+    content="Together with their families, Ramesh T & Ramya HM cordially invite you to celebrate their wedding celebrations on October 11 – 12, 2026.">
+  <meta name="theme-color" content="#400710">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Ramesh Weds Ramya | Wedding Invitation">
+  <meta property="og:description"
+    content="We cordially invite you to celebrate the wedding union of Ramesh T & Ramya HM on October 11 – 12, 2026.">
+  <meta property="og:image" content="assets/Couple_img1.png">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Falling flower petal animation */
+    .petal {
+      position: fixed;
+      pointer-events: none;
+      z-index: 60;
+      animation-name: fall, sway;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -10%;
+        opacity: 0.9;
+      }
+
+      100% {
+        top: 105%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes sway {
+
+      0%,
+      100% {
+        transform: translateX(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateX(45px) rotate(180deg);
+      }
+    }
+
+    /* Pulse animation for active music */
+    @keyframes gentlePulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .pulse-playing {
+      animation: gentlePulse 2s infinite ease-in-out;
+    }
+
+    /* Enhanced Royal Carousel Transitions & Animations */
+    .carousel-track {
+      display: flex;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-slide img {
+      transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+      transform: scale(1);
+      will-change: transform;
+    }
+
+    .carousel-slide.active-slide img {
+      transform: scale(1.055);
+    }
+
+    .slide-caption-box {
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+    }
+
+    .carousel-slide:not(.active-slide) .slide-caption-box {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    .carousel-slide.active-slide .slide-caption-box {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Story-style Progress Indicator */
+    .story-bar {
+      height: 3px;
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 9999px;
+      overflow: hidden;
+      flex: 1;
+      position: relative;
+    }
+
+    .story-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #fed488, #ffffff);
+      border-radius: 9999px;
+      box-shadow: 0 0 6px rgba(254, 212, 136, 0.8);
+    }
+
+    .story-bar.completed .story-fill {
+      width: 100% !important;
+    }
+
+    /* Thumbnail previews */
+    .thumb-pill {
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+
+    .thumb-pill.active-thumb {
+      border-color: #e9c176 !important;
+      transform: translateY(-2px) scale(1.06);
+      box-shadow: 0 4px 14px rgba(119, 90, 25, 0.35);
+    }
+
+    /* Royal Golden Shimmer Animation for Couple Names */
+    @keyframes goldShimmer {
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .name-shimmer {
+      background: linear-gradient(110deg,
+          #400710 0%,
+          #400710 32%,
+          #b88628 48%,
+          #fed488 52%,
+          #b88628 56%,
+          #400710 70%,
+          #400710 100%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 5s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    /* Subtle floating entrance and breathing */
+    @keyframes nameFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    .name-float {
+      animation: nameFloat 3.8s ease-in-out infinite;
+    }
+
+    /* Radiant glow pulse for ampersand */
+    @keyframes ampersandGlow {
+
+      0%,
+      100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 1px rgba(119, 90, 25, 0.3));
+        color: #775a19;
+      }
+
+      50% {
+        transform: scale(1.15) rotate(2deg);
+        filter: drop-shadow(0 0 8px rgba(254, 212, 136, 0.8));
+        color: #a47c24;
+      }
+    }
+
+    .ampersand-animated {
+      display: inline-block;
+      animation: ampersandGlow 2.8s ease-in-out infinite;
+    }
+
+    /* Expanding golden divider lines */
+    @keyframes linePulse {
+
+      0%,
+      100% {
+        width: 2.2rem;
+        opacity: 0.5;
+      }
+
+      50% {
+        width: 3.6rem;
+        opacity: 1;
+      }
+    }
+
+    .line-animated {
+      animation: linePulse 2.8s ease-in-out infinite;
+    }
+
+    /* Gold shimmer for dark welcome screen */
+    .name-shimmer-light {
+      background: linear-gradient(
+        110deg,
+        #ffffff 0%,
+        #ffe8b8 25%,
+        #fed488 45%,
+        #ffffff 52%,
+        #fed488 60%,
+        #e9c176 75%,
+        #ffffff 100%
+      );
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 4s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    /* Pulsing aura for royal wax seal */
+    @keyframes sealPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(254, 212, 136, 0.4), 0 0 20px rgba(254, 212, 136, 0.2);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 0 14px rgba(254, 212, 136, 0), 0 0 35px rgba(254, 212, 136, 0.5);
+        transform: scale(1.05);
+      }
+    }
+    .seal-pulse {
+      animation: sealPulse 2.4s ease-in-out infinite;
+    }
+
+    /* Welcome screen unfolding exit transition */
+    .welcome-exit {
+      opacity: 0 !important;
+      transform: scale(1.08) !important;
+      filter: blur(4px) !important;
+      pointer-events: none !important;
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    /* Small Footer Scroll Reveal & Animations */
+    .scroll-reveal-footer {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal-footer.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Shimmering Golden Accent Line for Footer */
+    @keyframes footerShimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .footer-gold-line {
+      background: linear-gradient(90deg, transparent 0%, rgba(184, 134, 40, 0.2) 20%, rgba(254, 212, 136, 0.95) 50%, rgba(184, 134, 40, 0.2) 80%, transparent 100%);
+      background-size: 200% 100%;
+      animation: footerShimmer 4.5s ease-in-out infinite;
+    }
+
+    /* Floating Scroll To Top Pill */
+    .scroll-top-btn {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px) scale(0.85);
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#122115",
+            "surface-container-high": "#efe6e7",
+            "on-background": "#1e1b1c",
+            "primary-container": "#5c1d24",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fff8f8",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1e1b1c",
+            "surface-dim": "#e1d8d9",
+            "surface-container": "#f5eced",
+            "secondary-fixed-dim": "#e9c176",
+            "secondary": "#775a19",
+            "primary": "#400710",
+            "on-primary-container": "#db8287",
+            "outline": "#867273",
+            "surface-variant": "#e9e0e1",
+            "on-primary": "#ffffff",
+            "secondary-container": "#fed488",
+            "on-surface-variant": "#534343",
+            "background": "#fff8f8",
+            "surface-container-highest": "#e9e0e1",
+            "surface-container-low": "#fbf1f2",
+            "surface-bright": "#fff8f8",
+            "surface-tint": "#93474d",
+            "outline-variant": "#d9c1c1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "space-lg": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "title-script": ["Playfair Display", "serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body
+  class="bg-gradient-to-b from-[#2e050c] via-surface-container to-surface font-body-md text-on-surface antialiased min-h-screen">
+
+  <!-- ========================================== -->
+  <!-- ROYAL WELCOME & INVITATION LOADING SCREEN  -->
+  <!-- ========================================== -->
+  <div 
+    id="welcomeOverlay" 
+    onclick="exploreWebsite()" 
+    class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gradient-to-b from-[#1f0206] via-[#3a060e] to-[#160104] text-white cursor-pointer select-none overflow-hidden"
+    title="Click or tap anywhere to explore the wedding invitation"
+  >
+    <!-- Background Radiant Light Aura -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,212,136,0.18)_0%,transparent_70%)] pointer-events-none"></div>
+
+    <!-- Gentle Ambient Floating Sparks -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+      <div class="petal" style="left: 15vw; width: 10px; height: 14px; background-color: #fed488; animation-duration: 7s, 3s; top: -10%;"></div>
+      <div class="petal" style="left: 75vw; width: 12px; height: 16px; background-color: #ffdada; animation-duration: 8s, 4s; top: -10%;"></div>
+      <div class="petal" style="left: 45vw; width: 9px; height: 12px; background-color: #e9c176; animation-duration: 6s, 3s; top: -10%;"></div>
+    </div>
+
+    <!-- Royal Ornate Card Container -->
+    <div class="relative w-full max-w-sm mx-auto p-7 sm:p-8 rounded-3xl bg-surface-container-lowest/10 backdrop-blur-xl border border-secondary/40 shadow-[0_20px_60px_rgba(0,0,0,0.65)] text-center flex flex-col items-center">
+      
+      <!-- Ornate Gold Corner Accents -->
+      <div class="absolute -top-1.5 -left-1.5 w-7 h-7 border-t-2 border-l-2 border-secondary-container pointer-events-none"></div>
+      <div class="absolute -top-1.5 -right-1.5 w-7 h-7 border-t-2 border-r-2 border-secondary-container pointer-events-none"></div>
+      <div class="absolute -bottom-1.5 -left-1.5 w-7 h-7 border-b-2 border-l-2 border-secondary-container pointer-events-none"></div>
+      <div class="absolute -bottom-1.5 -right-1.5 w-7 h-7 border-b-2 border-r-2 border-secondary-container pointer-events-none"></div>
+
+      <!-- Auspicious Kalash Emblem -->
+      <div class="p-2.5 rounded-full bg-secondary-container/20 border border-secondary/40 mb-3 shadow-inner">
+        <svg class="w-10 h-10 text-secondary-container" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 48 48">
+          <path d="M24 6 C20 16, 12 20, 8 28 C6 32, 10 36, 16 34 C19 33, 22 28, 24 22 C26 28, 29 33, 32 34 C38 36, 42 32, 40 28 C36 20, 28 16, 24 6 Z"></path>
+          <circle cx="24" cy="18" fill="currentColor" r="1.5"></circle>
+          <path d="M24 38 L24 42 M20 40 L28 40" stroke-linecap="round"></path>
+        </svg>
+      </div>
+
+      <!-- Sanskrit Invocation -->
+      <span class="text-[14px] tracking-[0.28em] text-secondary-container font-title-script font-medium mb-1 drop-shadow-sm">
+        ॥ ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ॥
+      </span>
+      
+      <span class="font-label-caps text-[10px] text-white/70 uppercase tracking-[0.3em] font-semibold mb-3">
+        Together With Their Families
+      </span>
+
+      <!-- Royal Welcome Sentence Requested by User -->
+      <div class="my-1.5 px-2">
+        <p class="font-title-script text-[17px] sm:text-[18px] text-[#ffdea5] italic leading-relaxed drop-shadow-sm">
+          You are cordially welcomed to the wedding ceremony of
+        </p>
+      </div>
+
+      <!-- Couple Names in Radiant Shimmering Gold (Aligned Sidewise) -->
+      <div class="my-3 px-1 text-center">
+        <h1 class="font-headline-lg text-[27px] sm:text-[32px] leading-tight font-serif tracking-tight flex items-center justify-center gap-2 sm:gap-2.5 flex-nowrap whitespace-nowrap">
+          <span class="name-shimmer-light font-bold drop-shadow-md">Ramesh T</span>
+          <span class="font-title-script text-[24px] sm:text-[28px] text-secondary-container italic font-light animate-ampersand">&amp;</span>
+          <span class="name-shimmer-light font-bold drop-shadow-md">Ramya HM</span>
+        </h1>
+        
+        <div class="flex items-center justify-center gap-3 my-1.5">
+          <span class="h-[1px] w-10 bg-secondary-container/60"></span>
+          <span class="text-secondary-container/80 text-[10px]">❖</span>
+          <span class="h-[1px] w-10 bg-secondary-container/60"></span>
+        </div>
+      </div>
+
+      <!-- Auspicious Wedding Dates -->
+      <div class="mt-2 mb-5">
+        <span class="px-4 py-1.5 rounded-full bg-black/40 border border-secondary/40 text-[11px] font-label-caps text-secondary-container tracking-[0.25em] uppercase font-semibold backdrop-blur-sm shadow-sm">
+          October 11 – 12, 2026
+        </span>
+      </div>
+
+      <!-- Interactive Royal Wax Seal Button & Tap Anywhere Prompt -->
+      <div class="flex flex-col items-center gap-2 pt-1">
+        <!-- Golden Wax Seal Emblem with Pulsing Aura -->
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#ffd488] via-[#e9c176] to-[#b37f20] text-[#400710] flex items-center justify-center font-title-script font-bold text-[20px] shadow-lg seal-pulse border-2 border-white/50">
+          R &amp; R
+        </div>
+        
+        <!-- Interactive Prompt Text -->
+        <div class="flex items-center gap-1.5 text-white/95 text-[12px] font-label-caps tracking-widest uppercase font-bold mt-1.5">
+          <span class="material-symbols-outlined text-[18px] text-secondary-container animate-bounce">touch_app</span>
+          <span>Click Anywhere to Explore</span>
+        </div>
+        <span class="text-[10px] text-white/60 font-light italic">Tap to open invitation &amp; play melodies</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desktop App Shell Wrapper -->
+  <div
+    class="max-w-md mx-auto min-h-screen bg-surface relative shadow-2xl border-x border-outline-variant/30 flex flex-col">
+
+    <!-- ========================================== -->
+    <!-- TOP FIXED HEADER                           -->
+    <!-- ========================================== -->
+    <header
+      class="fixed top-0 max-w-md w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(92,29,36,0.06)] border-b border-outline-variant/20">
+      <div class="h-16 px-margin-mobile flex items-center justify-between">
+
+        <!-- Monogram Logo -->
+        <a href="#hero" class="flex items-center gap-2 group">
+          <span
+            class="font-title-script text-[22px] font-bold text-primary tracking-wider group-hover:text-secondary transition-colors">R
+            &amp; R</span>
+          <span
+            class="text-[10px] font-label-caps tracking-widest text-secondary px-2 py-0.5 rounded-full bg-secondary-container/40 font-semibold">OCT
+            2026</span>
+        </a>
+
+        <!-- Top Right Action Controls -->
+        <div class="flex items-center gap-2">
+          <!-- Traditional Audio / Shehnai Melodies Toggle -->
+          <button id="musicToggleBtn" aria-label="Toggle Traditional Wedding Music"
+            title="Play Traditional Shehnai Melodies"
+            class="w-9 h-9 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary hover:bg-secondary-container hover:text-primary transition-all">
+            <span class="material-symbols-outlined text-[19px]" id="musicIcon">music_note</span>
+          </button>
+
+          <!-- Rose Petal Shower Toggle -->
+          <button id="petalToggleBtn" aria-label="Toggle Rose Petals" title="Flower Petal Shower"
+            class="w-9 h-9 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-secondary hover:bg-secondary-container transition-all">
+            <span class="material-symbols-outlined text-[19px]">local_florist</span>
+          </button>
+
+          <!-- Share Button -->
+          <button id="shareBtn" aria-label="Share Wedding Invitation" title="Share Invitation"
+            class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-all shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">share</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN SINGLE LANDING PAGE CONTENT           -->
+    <!-- ========================================== -->
+    <main class="flex flex-col relative w-full pt-16 bg-surface flex-grow">
+      <div
+        class="flex flex-col w-full text-on-surface overflow-x-hidden selection:bg-secondary-container selection:text-primary flex-grow pb-4">
+
+        <!-- ========================================== -->
+        <!-- TOP VENUE NAVIGATION BANNER                -->
+        <!-- ========================================== -->
+        <div class="w-full px-margin-mobile pt-3 pb-1">
+          <div
+            class="bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl border border-secondary/25 p-3.5 sm:p-4 shadow-[0_4px_24px_rgba(92,29,36,0.06)] relative overflow-hidden text-center">
+
+            <!-- Subtle Gold Top Border Glow -->
+            <div
+              class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-secondary/70 to-transparent">
+            </div>
+
+            <!-- Title Requested by User -->
+            <div class="flex items-center justify-center gap-1.5 mb-2.5">
+              <span class="material-symbols-outlined text-secondary text-[18px]">near_me</span>
+              <h3 class="text-[12px] sm:text-[13px] font-label-caps uppercase tracking-wider text-primary font-bold">
+                Click below to navigate venue address
+              </h3>
+            </div>
+
+            <!-- Action & Navigation Buttons -->
+            <div class="flex items-center gap-2">
+              <a href="https://maps.google.com/?q=13.581583,77.464250" target="_blank" rel="noopener"
+                class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-primary to-[#2e050c] text-on-primary text-[11px] font-label-caps tracking-wider uppercase font-semibold flex items-center justify-center gap-2 shadow-sm hover:brightness-110 active:scale-95 transition-all"
+                title="Open Directions in Google Maps">
+                <span class="material-symbols-outlined text-[17px] text-secondary-container">directions</span>
+                <span>Open in Google Maps</span>
+              </a>
+
+              <a href="#venue"
+                class="py-2.5 px-3 rounded-xl bg-surface-container border border-secondary/35 text-primary hover:bg-secondary-container/30 text-[11px] font-label-caps tracking-wider uppercase font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+                title="View Full Venue Details & Directions">
+                <span class="material-symbols-outlined text-[16px] text-secondary">place</span>
+                <span>Venue</span>
+              </a>
+
+              <a href="#timings"
+                class="py-2.5 px-3 rounded-xl bg-surface-container border border-secondary/35 text-primary hover:bg-secondary-container/30 text-[11px] font-label-caps tracking-wider uppercase font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+                title="View Ceremony Schedule">
+                <span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+                <span>Timings</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 1. HERO INVITATION                         -->
+        <!-- ========================================== -->
+        <section id="hero" class="relative px-margin-mobile pt-2 pb-space-sm flex flex-col items-center text-center">
+
+          <!-- ========================================== -->
+          <!-- IMAGE CAROUSEL (TRADITIONAL ARCHED FRAME)  -->
+          <!-- ========================================== -->
+          <div class="w-full max-w-xs relative my-2 mx-auto scroll-mt-24" id="carouselWrapper">
+
+            <!-- Traditional Arched Frame Card (Restored Rounded Frame) -->
+            <div
+              class="relative p-2 bg-surface-container rounded-t-[10rem] rounded-b-xl shadow-xl shadow-primary-container/15 border border-outline-variant/50">
+
+              <!-- Carousel Viewport (Arched Crown with Clear Non-Cropping Framing) -->
+              <div class="relative overflow-hidden rounded-t-[9.5rem] rounded-b-lg aspect-[3/4] bg-surface-dim select-none"
+                id="carouselViewport">
+
+                <!-- Slide Counter Badge -->
+                <div
+                  class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-sm text-[#fed488] text-[10px] font-label-caps tracking-wider border border-[#fed488]/30 z-30 shadow-sm">
+                  <span id="slideCounter">1 / 5</span>
+                </div>
+
+                <!-- Fullscreen Lightbox Button -->
+                <button onclick="openCurrentInLightbox()" aria-label="View Full Photo"
+                  title="View full photo uncropped"
+                  class="absolute top-3 left-3 w-7 h-7 rounded-full bg-black/55 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all shadow-sm active:scale-90 z-30">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span>
+                </button>
+
+                <!-- Carousel Slides Track -->
+                <div class="carousel-track h-full" id="carouselTrack">
+
+                  <!-- Slide 1: Formal Wedding Card Portrait -->
+                  <div class="carousel-slide active-slide relative h-full cursor-pointer"
+                    onclick="openLightbox(0)">
+                    <img src="assets/Couple_img1.png" alt="Ramesh T & Ramya HM - Wedding Invitation"
+                      class="w-full h-full object-cover object-[center_6%]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="slide-caption-box absolute bottom-3 left-3 right-3 text-center pointer-events-none">
+                      <span
+                        class="px-3 py-1 bg-surface/95 text-primary text-[11px] font-label-caps tracking-widest uppercase rounded-full shadow-sm backdrop-blur-sm font-semibold inline-block">
+                        Ramesh &amp; Ramya
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2: Seated Couple with Sacred Garlands -->
+                  <div class="carousel-slide relative h-full cursor-pointer"
+                    onclick="openLightbox(1)">
+                    <img src="assets/IMG_20261003_161212.jpg" alt="Auspicious Union - Ramesh & Ramya"
+                      class="w-full h-full object-cover object-[center_34%]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="slide-caption-box absolute bottom-3 left-3 right-3 text-center pointer-events-none">
+                      <span
+                        class="px-3 py-1 bg-surface/95 text-primary text-[11px] font-label-caps tracking-widest uppercase rounded-full shadow-sm backdrop-blur-sm font-semibold inline-block">
+                        Auspicious Union • Garlands
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3: Varamala (Garland Exchange) Ceremony -->
+                  <div class="carousel-slide relative h-full cursor-pointer"
+                    onclick="openLightbox(2)">
+                    <img src="assets/IMG_20261003_161640.jpg" alt="Varamala Ceremony - Sacred Garland Exchange"
+                      class="w-full h-full object-cover object-[center_16%]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="slide-caption-box absolute bottom-3 left-3 right-3 text-center pointer-events-none">
+                      <span
+                        class="px-3 py-1 bg-surface/95 text-primary text-[11px] font-label-caps tracking-widest uppercase rounded-full shadow-sm backdrop-blur-sm font-semibold inline-block">
+                        Varamala • Sacred Vows
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Slide 4: Sweet Celebrations (Feeding Sweets) -->
+                  <div class="carousel-slide relative h-full cursor-pointer"
+                    onclick="openLightbox(3)">
+                    <img src="assets/IMG_20261003_161514.jpg" alt="Sweet Celebrations"
+                      class="w-full h-full object-cover object-[center_18%]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="slide-caption-box absolute bottom-3 left-3 right-3 text-center pointer-events-none">
+                      <span
+                        class="px-3 py-1 bg-surface/95 text-primary text-[11px] font-label-caps tracking-widest uppercase rounded-full shadow-sm backdrop-blur-sm font-semibold inline-block">
+                        Sweet Moments • Smiles
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Slide 5: Seated Couple in Grace -->
+                  <div class="carousel-slide relative h-full cursor-pointer"
+                    onclick="openLightbox(4)">
+                    <img src="assets/IMG_20261003_161724.jpg" alt="Cherished Wedding Memories"
+                      class="w-full h-full object-cover object-[center_24%]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="slide-caption-box absolute bottom-3 left-3 right-3 text-center pointer-events-none">
+                      <span
+                        class="px-3 py-1 bg-surface/95 text-primary text-[11px] font-label-caps tracking-widest uppercase rounded-full shadow-sm backdrop-blur-sm font-semibold inline-block">
+                        Cherished Memories
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Slide Navigation Arrows -->
+                <button id="carouselPrevBtn" aria-label="Previous Photo"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-black/45 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all shadow-md active:scale-90">
+                  <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                </button>
+                <button id="carouselNextBtn" aria-label="Next Photo"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-black/45 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all shadow-md active:scale-90">
+                  <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                </button>
+
+              </div>
+
+              <!-- Carousel Indicator Dots -->
+              <div class="flex items-center justify-center gap-1.5 pt-2.5 pb-1" id="carouselDots">
+                <button class="w-3 h-1.5 rounded-full bg-secondary transition-all dot-indicator" data-index="0"
+                  aria-label="Go to slide 1"></button>
+                <button class="w-1.5 h-1.5 rounded-full bg-outline-variant transition-all dot-indicator" data-index="1"
+                  aria-label="Go to slide 2"></button>
+                <button class="w-1.5 h-1.5 rounded-full bg-outline-variant transition-all dot-indicator" data-index="2"
+                  aria-label="Go to slide 3"></button>
+                <button class="w-1.5 h-1.5 rounded-full bg-outline-variant transition-all dot-indicator" data-index="3"
+                  aria-label="Go to slide 4"></button>
+                <button class="w-1.5 h-1.5 rounded-full bg-outline-variant transition-all dot-indicator" data-index="4"
+                  aria-label="Go to slide 5"></button>
+              </div>
+
+            </div>
+
+            <!-- Traditional Gold Filigree Corners (Restored on all 4 corners) -->
+            <div class="absolute -top-1.5 -left-1.5 w-6 h-6 border-t-2 border-l-2 border-secondary pointer-events-none">
+            </div>
+            <div
+              class="absolute -top-1.5 -right-1.5 w-6 h-6 border-t-2 border-r-2 border-secondary pointer-events-none">
+            </div>
+            <div
+              class="absolute -bottom-1.5 -left-1.5 w-6 h-6 border-b-2 border-l-2 border-secondary pointer-events-none">
+            </div>
+            <div
+              class="absolute -bottom-1.5 -right-1.5 w-6 h-6 border-b-2 border-r-2 border-secondary pointer-events-none">
+            </div>
+
+            <!-- Quick Thumbnail Strip Below Arched Card -->
+            <div class="flex items-center justify-between gap-1.5 pt-2.5 px-0.5" id="carouselThumbnails">
+              <div class="thumb-pill active-thumb w-12 h-14 rounded-xl overflow-hidden border-2 border-[#e9c176] shadow-sm relative cursor-pointer" data-index="0" title="Wedding Card">
+                <img src="assets/Couple_img1.png" alt="Thumb 1" class="w-full h-full object-cover object-center pointer-events-none">
+              </div>
+              <div class="thumb-pill w-12 h-14 rounded-xl overflow-hidden border-2 border-outline-variant/40 opacity-70 hover:opacity-100 relative cursor-pointer" data-index="1" title="Sacred Garlands">
+                <img src="assets/IMG_20261003_161212.jpg" alt="Thumb 2" class="w-full h-full object-cover object-[center_34%] pointer-events-none">
+              </div>
+              <div class="thumb-pill w-12 h-14 rounded-xl overflow-hidden border-2 border-outline-variant/40 opacity-70 hover:opacity-100 relative cursor-pointer" data-index="2" title="Varamala">
+                <img src="assets/IMG_20261003_161640.jpg" alt="Thumb 3" class="w-full h-full object-cover object-[center_16%] pointer-events-none">
+              </div>
+              <div class="thumb-pill w-12 h-14 rounded-xl overflow-hidden border-2 border-outline-variant/40 opacity-70 hover:opacity-100 relative cursor-pointer" data-index="3" title="Sweet Celebrations">
+                <img src="assets/IMG_20261003_161514.jpg" alt="Thumb 4" class="w-full h-full object-cover object-[center_18%] pointer-events-none">
+              </div>
+              <div class="thumb-pill w-12 h-14 rounded-xl overflow-hidden border-2 border-outline-variant/40 opacity-70 hover:opacity-100 relative cursor-pointer" data-index="4" title="Grace & Smiles">
+                <img src="assets/IMG_20261003_161724.jpg" alt="Thumb 5" class="w-full h-full object-cover object-[center_24%] pointer-events-none">
+              </div>
+            </div>
+
+          </div>
+
+            <!-- Traditional Gold Filigree Corners -->
+            <div class="absolute -top-1.5 -left-1.5 w-6 h-6 border-t-2 border-l-2 border-secondary pointer-events-none">
+            </div>
+            <div
+              class="absolute -top-1.5 -right-1.5 w-6 h-6 border-t-2 border-r-2 border-secondary pointer-events-none">
+            </div>
+            <div
+              class="absolute -bottom-1.5 -left-1.5 w-6 h-6 border-b-2 border-l-2 border-secondary pointer-events-none">
+            </div>
+            <div
+              class="absolute -bottom-1.5 -right-1.5 w-6 h-6 border-b-2 border-r-2 border-secondary pointer-events-none">
+            </div>
+          </div>
+
+          <!-- Auspicious Kalash Symbol & Invocation (BELOW THE IMAGES) -->
+          <div class="flex flex-col items-center mt-3 mb-1">
+            <div class="p-2 rounded-full bg-secondary-container/30 border border-secondary/20 mb-1.5 shadow-xs">
+              <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" stroke-width="1.2"
+                viewBox="0 0 48 48">
+                <path
+                  d="M24 6 C20 16, 12 20, 8 28 C6 32, 10 36, 16 34 C19 33, 22 28, 24 22 C26 28, 29 33, 32 34 C38 36, 42 32, 40 28 C36 20, 28 16, 24 6 Z">
+                </path>
+                <circle cx="24" cy="18" fill="currentColor" r="1.5"></circle>
+                <path d="M24 38 L24 42 M20 40 L28 40" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <span class="text-[13px] tracking-[0.25em] text-secondary font-medium font-title-script mb-0.5">॥ ಶ್ರೀ
+              ಗಣೇಶಾಯ ನಮಃ ॥</span>
+            <span class="font-label-caps text-[11px] text-secondary tracking-[0.28em] uppercase font-semibold">Together
+              With Their Families</span>
+          </div>
+
+          <!-- Couple Names with Royal Animations (ALIGNED SIDEWISE) -->
+          <div class="my-2.5 max-w-sm mx-auto text-center px-1">
+            <h1 class="font-headline-lg text-[26px] sm:text-[32px] leading-tight tracking-tight font-serif name-float flex items-center justify-center gap-2 sm:gap-2.5 flex-nowrap whitespace-nowrap">
+              <span class="name-shimmer font-bold">Ramesh T</span>
+              <span class="font-title-script text-[24px] sm:text-[28px] ampersand-animated italic font-light text-secondary">&amp;</span>
+              <span class="name-shimmer font-bold">Ramya HM</span>
+            </h1>
+
+            <div class="flex items-center justify-center gap-3 my-1.5">
+              <span class="h-[1px] w-10 bg-secondary/50 line-animated rounded-full"></span>
+              <span class="text-secondary/70 text-[10px]">❖</span>
+              <span class="h-[1px] w-10 bg-secondary/50 line-animated rounded-full"></span>
+            </div>
+
+            <p class="font-title-script text-[17px] text-on-surface-variant italic pt-0.5">
+              cordially invite you to celebrate their union
+            </p>
+          </div>
+
+          <!-- Wedding Date Pill -->
+          <div class="mt-3 flex flex-col items-center">
+            <span
+              class="px-4 py-1.5 bg-surface-container rounded-full border border-secondary/30 font-label-caps text-[11px] tracking-[0.24em] text-primary uppercase font-bold shadow-sm">
+              October 11 – 12, 2026
+            </span>
+          </div>
+
+          <!-- Live Wedding Countdown Timer (Centered & Aligned) -->
+          <div
+            class="w-full max-w-xs mx-auto self-center mt-3 bg-surface-container-lowest p-3.5 rounded-2xl border border-secondary/25 shadow-md text-center">
+            <div class="flex items-center justify-center gap-1.5 mb-2.5 text-center">
+              <span class="material-symbols-outlined text-secondary text-[17px]">hourglass_top</span>
+              <span class="font-label-caps text-[10px] tracking-widest uppercase text-secondary font-semibold">Wedding
+                Countdown</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center justify-center items-center" id="countdownGrid">
+              <div class="bg-surface-container-low p-2 rounded-xl border border-outline-variant/30 flex flex-col items-center justify-center">
+                <span class="block font-headline-sm text-[20px] text-primary font-bold leading-tight" id="cdDays">00</span>
+                <span
+                  class="block text-[9px] font-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Days</span>
+              </div>
+              <div class="bg-surface-container-low p-2 rounded-xl border border-outline-variant/30 flex flex-col items-center justify-center">
+                <span class="block font-headline-sm text-[20px] text-primary font-bold leading-tight" id="cdHours">00</span>
+                <span
+                  class="block text-[9px] font-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Hours</span>
+              </div>
+              <div class="bg-surface-container-low p-2 rounded-xl border border-outline-variant/30 flex flex-col items-center justify-center">
+                <span class="block font-headline-sm text-[20px] text-primary font-bold leading-tight" id="cdMins">00</span>
+                <span
+                  class="block text-[9px] font-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Mins</span>
+              </div>
+              <div class="bg-surface-container-low p-2 rounded-xl border border-outline-variant/30 flex flex-col items-center justify-center">
+                <span class="block font-headline-sm text-[20px] text-primary font-bold leading-tight" id="cdSecs">00</span>
+                <span
+                  class="block text-[9px] font-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Secs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Button (Centered) -->
+          <div class="w-full max-w-xs mx-auto self-center mt-3 flex items-center justify-center">
+            <button onclick="addToCalendar()"
+              class="w-full py-2.5 px-4 bg-surface-container-lowest border border-secondary/40 text-secondary text-[11px] font-label-caps tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 hover:bg-secondary-container/20 active:scale-95 transition-all shadow-sm font-semibold">
+              <span class="material-symbols-outlined text-[17px]">event</span>
+              Add Wedding to Calendar
+            </button>
+          </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 3. SACRED TIMINGS & CELEBRATIONS           -->
+        <!-- ========================================== -->
+        <section id="timings"
+          class="scroll-mt-20 px-margin-mobile py-space-md bg-surface-container-low flex flex-col items-center border-y border-outline-variant/30">
+
+          <div class="flex items-center gap-2 mb-space-sm">
+            <span class="h-[1px] w-8 bg-secondary/40"></span>
+            <span class="font-label-caps text-[11px] text-secondary tracking-[0.25em] uppercase font-semibold">Event
+              Timings</span>
+            <span class="h-[1px] w-8 bg-secondary/40"></span>
+          </div>
+
+          <h2 class="font-headline-md text-[24px] text-primary mb-space-sm text-center">Auspicious Celebrations</h2>
+
+          <div class="w-full max-w-sm space-y-3.5">
+
+            <!-- Event Card 1: Reception -->
+            <div
+              class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border-t-4 border-secondary transition-all hover:shadow-md">
+              <div class="flex items-center justify-between mb-2">
+                <span
+                  class="px-2.5 py-0.5 bg-primary text-on-primary font-label-caps text-[10px] tracking-wider rounded font-semibold">
+                  RECEPTION
+                </span>
+                <span class="material-symbols-outlined text-secondary text-[22px]">celebration</span>
+              </div>
+              <h3 class="font-headline-sm text-[20px] text-primary mb-1">Wedding Reception</h3>
+              <p class="text-[13px] text-on-surface-variant font-light">An evening of celebration, warm felicitations,
+                and an elaborate royal banquet.</p>
+
+              <div
+                class="space-y-2 text-on-surface-variant text-[13px] font-body-md my-3 pt-2.5 border-t border-outline-variant/20">
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">calendar_month</span>
+                  <span class="font-semibold text-on-surface">Sunday, October 11, 2026</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+                  <span class="font-medium text-primary">6:30 PM onwards</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">checkroom</span>
+                  <span class="text-[12px]">Festive / Traditional Indian Attire</span>
+                </div>
+              </div>
+
+              <button onclick="addReceptionToCalendar()"
+                class="w-full py-2 bg-surface-container text-primary font-label-caps text-[10px] tracking-wider uppercase rounded-lg flex items-center justify-center gap-1.5 hover:bg-secondary-container/40 transition-colors border border-outline-variant/30">
+                <span class="material-symbols-outlined text-[14px]">add_alarm</span>
+                Set Reception Reminder
+              </button>
+            </div>
+
+            <!-- Event Card 2: Muhurtha -->
+            <div
+              class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border-t-4 border-primary transition-all hover:shadow-md">
+              <div class="flex items-center justify-between mb-2">
+                <span
+                  class="px-2.5 py-0.5 bg-secondary text-on-secondary font-label-caps text-[10px] tracking-wider rounded font-semibold">
+                  MUHURTHA
+                </span>
+                <span class="material-symbols-outlined text-secondary text-[22px]">favorite</span>
+              </div>
+              <h3 class="font-headline-sm text-[20px] text-primary mb-1">Lagna Muhurtha</h3>
+              <p class="text-[13px] text-on-surface-variant font-light">The divine tying of the Mangalsutra (Mangalya
+                Dharana) and the sacred Saptapadi.</p>
+
+              <div
+                class="space-y-2 text-on-surface-variant text-[13px] font-body-md my-3 pt-2.5 border-t border-outline-variant/20">
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">calendar_month</span>
+                  <span class="font-semibold text-on-surface">Monday, October 12, 2026</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+                  <span class="font-bold text-primary">9:15 AM – 9:45 AM (Auspicious Muhurtha)</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">restaurant</span>
+                  <span class="text-[12px]">Grand Traditional Kalyana Feast (Banana Leaf) Follows</span>
+                </div>
+              </div>
+
+              <button onclick="addMuhurthaToCalendar()"
+                class="w-full py-2 bg-surface-container text-primary font-label-caps text-[10px] tracking-wider uppercase rounded-lg flex items-center justify-center gap-1.5 hover:bg-secondary-container/40 transition-colors border border-outline-variant/30">
+                <span class="material-symbols-outlined text-[14px]">add_alarm</span>
+                Set Muhurtha Reminder
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 4. VENUE ADDRESS & DIRECTIONS              -->
+        <!-- ========================================== -->
+        <section id="venue" class="scroll-mt-20 px-margin-mobile py-space-md flex flex-col items-center text-center">
+
+          <div class="flex items-center gap-2 mb-space-sm">
+            <span class="h-[1px] w-8 bg-secondary/40"></span>
+            <span class="font-label-caps text-[11px] text-secondary tracking-[0.25em] uppercase font-semibold">Location
+              &amp; Maps</span>
+            <span class="h-[1px] w-8 bg-secondary/40"></span>
+          </div>
+
+          <h2 class="font-headline-md text-[24px] text-primary mb-3">Venue Address</h2>
+
+          <div
+            class="w-full max-w-sm bg-surface-container-lowest p-5 rounded-2xl shadow-[0_4px_24px_rgba(92,29,36,0.06)] border border-secondary/25 space-y-4 text-center relative overflow-hidden">
+
+            <!-- Subtle Top Accent -->
+            <div
+              class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-secondary/70 to-transparent">
+            </div>
+
+            <div
+              class="w-12 h-12 mx-auto rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary border border-secondary/25 shadow-xs">
+              <span class="material-symbols-outlined text-[24px]">location_on</span>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="font-headline-sm text-[20px] text-primary font-serif font-semibold">Kalyana Mantapa / Wedding
+                Hall</h3>
+              <p class="text-[13px] text-on-surface font-medium">Near Doddaballapura – Gauribidanur Road</p>
+              <p class="text-[12px] text-on-surface-variant font-light">Bengaluru Rural / Chikkaballapur District,
+                Karnataka</p>
+            </div>
+
+            <!-- Interactive GPS Coordinates Chip -->
+            <div
+              class="inline-flex items-center justify-center gap-2 p-2 px-3 bg-surface-container-low rounded-xl border border-secondary/20 text-secondary text-[13px] font-mono mx-auto">
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              <span>13.581583, 77.464250</span>
+            </div>
+
+            <!-- Action Buttons for Venue -->
+            <div class="space-y-2 pt-1">
+              <a class="w-full py-3 bg-gradient-to-r from-primary to-[#2e050c] text-on-primary font-label-caps text-[11px] tracking-widest uppercase rounded-xl flex items-center justify-center gap-2 active:scale-95 hover:brightness-110 shadow-md transition-all font-semibold"
+                href="https://maps.google.com/?q=13.581583,77.464250" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined text-[18px] text-secondary-container">directions</span>
+                Open in Google Maps
+              </a>
+
+              <button onclick="copyCoordinates()" id="copyCoordBtn"
+                class="w-full py-2.5 bg-surface-container text-primary font-label-caps text-[10px] tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 hover:bg-secondary-container/40 transition-all border border-secondary/25">
+                <span class="material-symbols-outlined text-[16px] text-secondary">content_copy</span>
+                <span id="copyBtnText">Copy GPS Coordinates</span>
+              </button>
+            </div>
+
+            <!-- Travel Hints -->
+            <div class="pt-3.5 border-t border-outline-variant/20 text-left space-y-2.5">
+              <span class="block font-label-caps text-[10px] uppercase tracking-wider text-secondary font-bold">Travel
+                Directions</span>
+
+              <div
+                class="p-2.5 bg-surface-container-low/60 rounded-xl border border-outline-variant/20 space-y-2 text-[12px] text-on-surface-variant">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">flight</span>
+                  <div>
+                    <span class="font-medium text-on-surface">Airport:</span> Kempegowda Intl Airport (BLR) is ~45 km
+                    (~50 mins drive).
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">train</span>
+                  <div>
+                    <span class="font-medium text-on-surface">Train:</span> Nearest stations at Doddaballapura (DDB)
+                    &amp; Gauribidanur (GBD).
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">directions_car</span>
+                  <div>
+                    <span class="font-medium text-on-surface">Road:</span> Directly accessible via State Highway 9 with
+                    ample hall parking.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- ========================================== -->
+      <!-- 5. COMPACT ROYAL FOOTER (BOTTOM PINNED)    -->
+      <!-- ========================================== -->
+      <footer id="mainFooter"
+        class="mt-auto w-full bg-surface-container-low/95 backdrop-blur-md border-t border-secondary/25 relative overflow-hidden scroll-reveal-footer z-10">
+
+        <!-- Shimmering Gold Accent Top Border -->
+        <div class="h-[2px] w-full footer-gold-line"></div>
+
+        <!-- Compact Footer Content -->
+        <div class="px-4 py-3 sm:py-3.5 flex flex-col items-center text-center space-y-2">
+
+          <!-- Top Row: Monogram, Tag & Smooth Scroll To Top -->
+          <div class="w-full flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5">
+              <span
+                class="w-6 h-6 rounded-full border border-secondary/40 flex items-center justify-center text-primary font-title-script text-[11px] bg-secondary-container/25 font-bold shadow-xs">
+                R&amp;R
+              </span>
+              <span class="font-label-caps text-[10px] sm:text-[10.5px] text-secondary tracking-widest uppercase font-semibold">
+                #RAMESHWEDSRAMYA
+              </span>
+              <span class="text-outline-variant/60 text-[9px] hidden xs:inline">•</span>
+              <span class="text-[10px] text-outline font-label-caps tracking-wider hidden xs:inline">Oct 11 &amp; 12, 2026</span>
+            </div>
+
+            <!-- Quick Scroll-To-Top Button in Footer -->
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+              class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container border border-outline-variant/40 text-primary hover:text-secondary hover:border-secondary transition-all text-[10px] font-label-caps uppercase tracking-wider active:scale-95 group shadow-xs"
+              title="Scroll back to top">
+              <span class="material-symbols-outlined text-[13px] text-secondary group-hover:-translate-y-0.5 transition-transform">arrow_upward</span>
+              <span>Top</span>
+            </button>
+          </div>
+
+          <!-- Hairline Divider -->
+          <div class="w-full h-[1px] bg-outline-variant/25"></div>
+
+          <!-- Middle Row: Credits & Quick Action Pills -->
+          <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-1.5 text-[10.5px]">
+            <!-- Credits -->
+            <div class="text-on-surface-variant flex items-center gap-1 flex-wrap justify-center text-center">
+              <span>Reserved by <a href="https://www.hreeem.com" target="_blank" rel="noopener"
+                  class="text-primary font-semibold hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-2">Hreeem.com</a></span>
+              <span class="text-outline-variant/60">•</span>
+              <span>Designed by <span class="text-secondary font-semibold">Hreeem Designs</span></span>
+            </div>
+
+            <!-- Quick Contact Links -->
+            <div class="flex items-center gap-1.5">
+              <a href="https://www.hreeem.com" target="_blank" rel="noopener" title="Visit Website: www.hreeem.com"
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-secondary transition-all shadow-xs">
+                <span class="material-symbols-outlined text-[12px] text-secondary">language</span>
+                <span class="font-mono text-[10px]">hreeem.com</span>
+              </a>
+
+              <a href="mailto:support@hreeem.com" title="Email: support@hreeem.com"
+                class="w-6 h-6 rounded-full bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-center text-secondary hover:text-primary hover:border-secondary transition-all shadow-xs">
+                <span class="material-symbols-outlined text-[12px]">mail</span>
+              </a>
+
+              <a href="https://wa.me/918453036381" target="_blank" rel="noopener" title="WhatsApp: 8453036381"
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#128C7E]/10 border border-[#128C7E]/30 text-[#128C7E] hover:bg-[#128C7E]/20 transition-all font-mono text-[10px] font-medium shadow-xs">
+                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.45 0.742.965 1.202.664.592 1.224.776 1.397.863.173.086.274.072.375-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086.159.058 1.011.477 1.184.564.173.087.289.13.332.202.043.073.043.419-.101.824z" />
+                </svg>
+                <span>8453036381</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom Copyright -->
+          <div class="text-[9.5px] text-outline font-label-caps tracking-wider block opacity-75">
+            © 2026 Ramesh &amp; Ramya Wedding • All Rights Reserved
+          </div>
+
+        </div>
+
+      </footer>
+
+    </main>
+
+    <!-- Floating Scroll-To-Top Button (Appears on Scroll) -->
+    <button id="floatingScrollTopBtn" aria-label="Scroll to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="scroll-top-btn fixed bottom-4 right-4 sm:right-[max(1rem,calc(50%-220px))] z-40 w-9 h-9 rounded-full bg-gradient-to-tr from-primary to-[#2e050c] text-[#fed488] border border-secondary/40 shadow-[0_4px_16px_rgba(64,7,16,0.35)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all group"
+      title="Scroll to Top">
+      <span class="material-symbols-outlined text-[19px] group-hover:-translate-y-0.5 transition-transform">keyboard_arrow_up</span>
+    </button>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: IMAGE LIGHTBOX (UNCROPPED FULL VIEW)-->
+  <!-- ========================================== -->
+  <div id="lightboxModal"
+    class="fixed inset-0 z-[120] bg-black/95 backdrop-blur-xl hidden flex items-center justify-center p-3 sm:p-4 opacity-0 transition-opacity duration-300"
+    onclick="closeLightbox()">
+    <div class="relative max-w-lg w-full flex flex-col items-center" onclick="event.stopPropagation()">
+      
+      <!-- Top Bar: Counter & Close Button -->
+      <div class="w-full flex items-center justify-between pb-3 px-1">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-white/10 text-[#fed488] border border-[#fed488]/30 font-label-caps text-[11px] font-semibold tracking-wider">
+            <span id="lbCounter">1 / 5</span>
+          </span>
+          <span class="text-white/60 text-[11px] font-light hidden sm:inline">Use arrows or swipe to browse</span>
+        </div>
+        <button onclick="closeLightbox()" aria-label="Close Lightbox"
+          class="text-white w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center transition-all border border-white/20 active:scale-90">
+          <span class="material-symbols-outlined text-[22px]">close</span>
+        </button>
+      </div>
+
+      <!-- Main Image Display Container (100% Uncropped) -->
+      <div class="relative w-full flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl border border-secondary/30 bg-[#0e0204]">
+        <img id="lightboxImg" src="" alt="Full view photo" class="max-h-[75vh] w-auto max-w-full object-contain select-none">
+        
+        <!-- Lightbox Prev / Next Navigation Arrows -->
+        <button onclick="lbPrevPhoto(event)" aria-label="Previous Photo"
+          class="absolute left-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/85 text-white border border-white/25 flex items-center justify-center backdrop-blur-md transition-all shadow-lg active:scale-90 hover:scale-105">
+          <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+        </button>
+        <button onclick="lbNextPhoto(event)" aria-label="Next Photo"
+          class="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/85 text-white border border-white/25 flex items-center justify-center backdrop-blur-md transition-all shadow-lg active:scale-90 hover:scale-105">
+          <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+        </button>
+      </div>
+
+      <!-- Caption & Details -->
+      <div class="w-full text-center mt-3 px-2">
+        <h3 id="lightboxTitle" class="text-white font-headline-sm text-[18px] font-serif tracking-wide font-medium"></h3>
+        <p id="lightboxCaption" class="text-[#fed488]/90 font-light text-[13px] mt-0.5"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- TOAST NOTIFICATION CONTAINER               -->
+  <!-- ========================================== -->
+  <div id="toast"
+    class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-primary text-on-primary px-4 py-2.5 rounded-full shadow-lg text-[12px] font-label-caps tracking-wider uppercase flex items-center gap-2 transform -translate-y-12 opacity-0 pointer-events-none transition-all duration-300">
+    <span class="material-symbols-outlined text-[16px] text-secondary-container" id="toastIcon">check_circle</span>
+    <span id="toastMsg">Action completed!</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- INTERACTIVE LOGIC & SCRIPTS                -->
+  <!-- ========================================== -->
+  <script>
+    // ------------------------------------------
+    // 0. WELCOME OVERLAY & EXPLORE ANIMATION
+    // ------------------------------------------
+    let hasExplored = false;
+    function exploreWebsite() {
+      if (hasExplored) return;
+      hasExplored = true;
+
+      const overlay = document.getElementById("welcomeOverlay");
+      if (overlay) {
+        overlay.classList.add("welcome-exit");
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 850);
+      }
+
+      // Unlock and start traditional Shehnai background melodies via user interaction
+      if (typeof startMusic === "function" && !isPlaying) {
+        try {
+          startMusic();
+        } catch (e) {
+          console.warn("Audio autoplay blocked:", e);
+        }
+      }
+
+      // Joyful celebratory flower petal shower
+      if (typeof triggerPetalBurst === "function") {
+        triggerPetalBurst();
+      }
+    }
+
+    // Keyboard accessibility: Enter, Space, or Escape also explores
+    document.addEventListener("keydown", (e) => {
+      if (!hasExplored && (e.key === "Enter" || e.key === " " || e.key === "Escape")) {
+        exploreWebsite();
+      }
+    });
+
+    // ------------------------------------------
+    // 1. CAROUSEL FUNCTIONALITY & PHOTO GALLERY
+    // ------------------------------------------
+    const galleryItems = [
+      {
+        src: "assets/Couple_img1.png",
+        title: "Ramesh T & Ramya HM",
+        subtitle: "Together With Their Families • Royal Wedding Invitation",
+        tag: "Wedding Invitation"
+      },
+      {
+        src: "assets/IMG_20261003_161212.jpg",
+        title: "Divine Blessings & Garlands",
+        subtitle: "Ramesh & Ramya adorned in traditional wedding garlands",
+        tag: "Auspicious Union"
+      },
+      {
+        src: "assets/IMG_20261003_161640.jpg",
+        title: "Sacred Garland Exchange",
+        subtitle: "Varamala ceremony with joyous lifelong vows",
+        tag: "Varamala Ritual"
+      },
+      {
+        src: "assets/IMG_20261003_161514.jpg",
+        title: "Sharing Joy & Blessings",
+        subtitle: "Sweet celebrations and cherished togetherness",
+        tag: "Sweet Beginning"
+      },
+      {
+        src: "assets/IMG_20261003_161724.jpg",
+        title: "Eternal Companionship",
+        subtitle: "Stepping gracefully into a radiant future together",
+        tag: "Cherished Memories"
+      }
+    ];
+
+    const carouselTrack = document.getElementById("carouselTrack");
+    const carouselSlides = document.querySelectorAll(".carousel-slide");
+    const carouselThumbs = document.querySelectorAll(".thumb-pill");
+    const carouselDots = document.querySelectorAll(".dot-indicator");
+    const slideCounter = document.getElementById("slideCounter");
+    const prevBtn = document.getElementById("carouselPrevBtn");
+    const nextBtn = document.getElementById("carouselNextBtn");
+    const carouselWrapper = document.getElementById("carouselWrapper");
+
+    let currentSlide = 0;
+    const totalSlides = galleryItems.length;
+    let autoPlayTimer = null;
+    const slideDuration = 4500; // 4.5 seconds per slide
+
+    function goToSlide(index) {
+      if (index < 0) {
+        currentSlide = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+
+      if (carouselTrack) {
+        carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      if (slideCounter) {
+        slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+      }
+
+      // Update active slide class for Ken-Burns zoom and smooth caption transitions
+      carouselSlides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.add("active-slide");
+        } else {
+          slide.classList.remove("active-slide");
+        }
+      });
+
+      // Update dot indicators
+      carouselDots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.className = "w-3.5 h-1.5 rounded-full bg-secondary transition-all dot-indicator";
+        } else {
+          dot.className = "w-1.5 h-1.5 rounded-full bg-outline-variant transition-all dot-indicator";
+        }
+      });
+
+      // Update thumbnail indicators with active border
+      carouselThumbs.forEach((thumb, idx) => {
+        if (idx === currentSlide) {
+          thumb.classList.add("active-thumb");
+          thumb.classList.remove("opacity-70");
+          thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+          thumb.classList.remove("active-thumb");
+          thumb.classList.add("opacity-70");
+        }
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nextSlide();
+        resetAutoPlay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        prevSlide();
+        resetAutoPlay();
+      });
+    }
+
+    carouselDots.forEach(dot => {
+      dot.addEventListener("click", function () {
+        const idx = parseInt(this.getAttribute("data-index"), 10);
+        goToSlide(idx);
+        resetAutoPlay();
+      });
+    });
+
+    carouselThumbs.forEach(thumb => {
+      thumb.addEventListener("click", function () {
+        const idx = parseInt(this.getAttribute("data-index"), 10);
+        goToSlide(idx);
+        resetAutoPlay();
+      });
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (carouselTrack) {
+      carouselTrack.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+      }, { passive: true });
+
+      carouselTrack.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+        startAutoPlay();
+      }, { passive: true });
+    }
+
+    function handleGesture() {
+      const diffX = touchEndX - touchStartX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          nextSlide(); // Swiped left -> show next
+        } else {
+          prevSlide(); // Swiped right -> show prev
+        }
+        resetAutoPlay();
+      }
+    }
+
+    // Auto Play
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(nextSlide, slideDuration);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    function resetAutoPlay() {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener("mouseenter", stopAutoPlay);
+      carouselWrapper.addEventListener("mouseleave", startAutoPlay);
+    }
+
+    goToSlide(0);
+    startAutoPlay();
+
+    // ------------------------------------------
+    // 2. COUNTDOWN TIMER (Oct 11, 2026, 18:30 IST)
+    // ------------------------------------------
+    const targetDate = new Date("2026-10-11T18:30:00+05:30").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("cdDays").textContent = String(days).padStart(2, '0');
+        document.getElementById("cdHours").textContent = String(hours).padStart(2, '0');
+        document.getElementById("cdMins").textContent = String(minutes).padStart(2, '0');
+        document.getElementById("cdSecs").textContent = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById("cdDays").textContent = "00";
+        document.getElementById("cdHours").textContent = "00";
+        document.getElementById("cdMins").textContent = "00";
+        document.getElementById("cdSecs").textContent = "00";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // ------------------------------------------
+    // 3. TOAST NOTIFICATIONS
+    // ------------------------------------------
+    function showToast(message, icon = "check_circle") {
+      const toast = document.getElementById("toast");
+      const toastMsg = document.getElementById("toastMsg");
+      const toastIcon = document.getElementById("toastIcon");
+
+      toastMsg.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.remove("opacity-0", "-translate-y-12");
+      toast.classList.add("opacity-100", "translate-y-0");
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "-translate-y-12");
+        toast.classList.remove("opacity-100", "translate-y-0");
+      }, 3000);
+    }
+
+    // ------------------------------------------
+    // 4. GPS COPY COORDINATES
+    // ------------------------------------------
+    function copyCoordinates() {
+      const coords = "13.581583, 77.464250";
+      navigator.clipboard.writeText(coords).then(() => {
+        const textSpan = document.getElementById("copyBtnText");
+        textSpan.textContent = "Coordinates Copied!";
+        showToast("GPS Coordinates Copied to Clipboard!");
+        setTimeout(() => {
+          textSpan.textContent = "Copy GPS Coordinates";
+        }, 2500);
+      }).catch(() => {
+        showToast("Venue: 13.581583, 77.464250");
+      });
+    }
+
+    // ------------------------------------------
+    // 5. CALENDAR INTEGRATION (.ICS GENERATOR)
+    // ------------------------------------------
+    function downloadIcs(title, description, location, startIso, endIso) {
+      const icsData = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//RameshWedsRamya//WeddingInvitation//EN",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        `SUMMARY:${title}`,
+        `DESCRIPTION:${description}`,
+        `LOCATION:${location}`,
+        `DTSTART:${startIso}`,
+        `DTEND:${endIso}`,
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute("download", `${title.replace(/[^a-zA-Z0-9]/g, "_")}.ics`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Calendar Invite Downloaded!", "event");
+    }
+
+    function addReceptionToCalendar() {
+      downloadIcs(
+        "Wedding Reception: Ramesh Weds Ramya",
+        "Join us for the Grand Wedding Reception of Ramesh T & Ramya HM.",
+        "Kalyana Mantapa (13.581583, 77.464250), Karnataka",
+        "20261011T130000Z", // 6:30 PM IST is 13:00 UTC
+        "20261011T173000Z"
+      );
+    }
+
+    function addMuhurthaToCalendar() {
+      downloadIcs(
+        "Lagna Muhurtha: Ramesh Weds Ramya",
+        "Sacred Mangalya Dharana & Saptapadi of Ramesh T & Ramya HM.",
+        "Kalyana Mantapa (13.581583, 77.464250), Karnataka",
+        "20261012T034500Z", // 9:15 AM IST is 03:45 UTC
+        "20261012T060000Z"
+      );
+    }
+
+    function addToCalendar() {
+      downloadIcs(
+        "Wedding Celebrations: Ramesh Weds Ramya",
+        "Wedding Celebrations of Ramesh T & Ramya HM. Reception on Oct 11, Muhurtha on Oct 12.",
+        "Kalyana Mantapa (13.581583, 77.464250), Karnataka",
+        "20261011T130000Z",
+        "20261012T080000Z"
+      );
+    }
+
+
+    // ------------------------------------------
+    // 7. LIGHTBOX FOR CAROUSEL / MOMENTS (FULL UNCROPPED VIEW)
+    // ------------------------------------------
+    const lightboxModal = document.getElementById("lightboxModal");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lbCounter = document.getElementById("lbCounter");
+
+    let lbCurrentIndex = 0;
+
+    function openLightbox(indexOrSrc, caption = "") {
+      if (typeof indexOrSrc === "number") {
+        lbCurrentIndex = indexOrSrc;
+      } else if (typeof indexOrSrc === "string") {
+        const foundIdx = galleryItems.findIndex(item => item.src === indexOrSrc);
+        lbCurrentIndex = foundIdx !== -1 ? foundIdx : 0;
+      } else {
+        lbCurrentIndex = currentSlide;
+      }
+      renderLightboxPhoto();
+      if (lightboxModal) {
+        lightboxModal.classList.remove("hidden");
+        setTimeout(() => {
+          lightboxModal.classList.remove("opacity-0");
+        }, 10);
+      }
+      stopAutoPlay();
+    }
+
+    function openCurrentInLightbox() {
+      openLightbox(currentSlide);
+    }
+
+    function renderLightboxPhoto() {
+      const item = galleryItems[lbCurrentIndex];
+      if (!item || !lightboxImg) return;
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.title;
+      if (lightboxTitle) lightboxTitle.textContent = item.title;
+      if (lightboxCaption) lightboxCaption.textContent = item.subtitle;
+      if (lbCounter) lbCounter.textContent = `${lbCurrentIndex + 1} / ${galleryItems.length}`;
+    }
+
+    function lbNextPhoto(e) {
+      if (e) e.stopPropagation();
+      lbCurrentIndex = (lbCurrentIndex + 1) % galleryItems.length;
+      renderLightboxPhoto();
+      goToSlide(lbCurrentIndex);
+    }
+
+    function lbPrevPhoto(e) {
+      if (e) e.stopPropagation();
+      lbCurrentIndex = (lbCurrentIndex - 1 + galleryItems.length) % galleryItems.length;
+      renderLightboxPhoto();
+      goToSlide(lbCurrentIndex);
+    }
+
+    function closeLightbox() {
+      if (lightboxModal) {
+        lightboxModal.classList.add("opacity-0");
+        setTimeout(() => {
+          lightboxModal.classList.add("hidden");
+          if (lightboxImg) lightboxImg.src = "";
+        }, 300);
+      }
+      startAutoPlay();
+    }
+
+    // Lightbox keyboard arrows & Escape support
+    document.addEventListener("keydown", (e) => {
+      if (lightboxModal && !lightboxModal.classList.contains("hidden")) {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") lbNextPhoto();
+        if (e.key === "ArrowLeft") lbPrevPhoto();
+      }
+    });
+
+    // Lightbox swipe gesture
+    let lbTouchStartX = 0;
+    let lbTouchEndX = 0;
+    if (lightboxModal) {
+      lightboxModal.addEventListener("touchstart", (e) => {
+        lbTouchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      lightboxModal.addEventListener("touchend", (e) => {
+        lbTouchEndX = e.changedTouches[0].screenX;
+        const diffX = lbTouchEndX - lbTouchStartX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX < 0) lbNextPhoto();
+          else lbPrevPhoto();
+        }
+      }, { passive: true });
+    }
+
+    // ------------------------------------------
+    // 8. SHARE INVITATION
+    // ------------------------------------------
+    document.getElementById("shareBtn").addEventListener("click", () => {
+      const shareData = {
+        title: "Ramesh Weds Ramya | Wedding Invitation",
+        text: "You are cordially invited to celebrate the wedding union of Ramesh T & Ramya HM on October 11 – 12, 2026.",
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => { });
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          showToast("Invitation Link Copied to Share!");
+        });
+      }
+    });
+
+    // ------------------------------------------
+    // 9. TRADITIONAL AMBIENT WEDDING MUSIC (WEB AUDIO SYNTHESIZER)
+    // Plays a tranquil Raag Kalyani / Yaman Tanpura harmony
+    // ------------------------------------------
+    let audioCtx = null;
+    let isPlaying = false;
+    let synthTimer = null;
+    const musicBtn = document.getElementById("musicToggleBtn");
+    const musicIcon = document.getElementById("musicIcon");
+
+    const ragaNotes = [220, 247.5, 277.2, 311.1, 330, 370, 415.3, 440];
+
+    function playNote(freq, duration = 2.5, gainLevel = 0.08) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(gainLevel, audioCtx.currentTime + 0.3);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function startMusic() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      isPlaying = true;
+      musicBtn.classList.add("bg-secondary-container", "pulse-playing");
+      musicIcon.textContent = "volume_up";
+      showToast("Playing Wedding Melodies 🎵", "music_note");
+
+      let step = 0;
+      function loop() {
+        if (!isPlaying) return;
+        const note = ragaNotes[step % ragaNotes.length];
+        playNote(note, 3.2, 0.06);
+        playNote(note * 0.5, 4.0, 0.04);
+        step = (step + 1);
+        synthTimer = setTimeout(loop, 900);
+      }
+      loop();
+    }
+
+    function stopMusic() {
+      isPlaying = false;
+      if (synthTimer) clearTimeout(synthTimer);
+      musicBtn.classList.remove("bg-secondary-container", "pulse-playing");
+      musicIcon.textContent = "music_note";
+      showToast("Music Paused", "volume_off");
+    }
+
+    musicBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        stopMusic();
+      } else {
+        startMusic();
+      }
+    });
+
+    // ------------------------------------------
+    // 10. FLOWER PETAL SHOWER EFFECT
+    // ------------------------------------------
+    let petalsEnabled = true;
+    let petalInterval = null;
+    const petalBtn = document.getElementById("petalToggleBtn");
+
+    function createPetal() {
+      if (!petalsEnabled) return;
+      const petal = document.createElement("div");
+      petal.className = "petal";
+
+      const colors = ["#e9c176", "#ffb3b6", "#ffdada", "#fed488", "#db8287"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+      const size = Math.random() * 12 + 8;
+      const left = Math.random() * 100;
+      const duration = Math.random() * 6 + 5;
+      const swayDuration = Math.random() * 3 + 2;
+
+      petal.style.left = `${left}vw`;
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size * 1.3}px`;
+      petal.style.backgroundColor = randomColor;
+      petal.style.borderRadius = "50% 0 50% 50%";
+      petal.style.boxShadow = "0 2px 4px rgba(0,0,0,0.08)";
+      petal.style.animationDuration = `${duration}s, ${swayDuration}s`;
+      petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, duration * 1000);
+    }
+
+    function startPetals() {
+      petalsEnabled = true;
+      petalBtn.classList.add("text-primary");
+      petalInterval = setInterval(createPetal, 1200);
+    }
+
+    function stopPetals() {
+      petalsEnabled = false;
+      clearInterval(petalInterval);
+      document.querySelectorAll(".petal").forEach(p => p.remove());
+      petalBtn.classList.remove("text-primary");
+    }
+
+    function triggerPetalBurst() {
+      for (let i = 0; i < 24; i++) {
+        setTimeout(createPetal, i * 80);
+      }
+    }
+
+    petalBtn.addEventListener("click", () => {
+      if (petalsEnabled) {
+        stopPetals();
+        showToast("Petals Paused");
+      } else {
+        startPetals();
+        showToast("Auspicious Flower Shower Active 🌸");
+      }
+    });
+
+    // Start subtle petal shower on load
+    startPetals();
+
+    // ==========================================
+    // 6. SMALL FOOTER SCROLL ANIMATION & SCROLL-TO-TOP
+    // ==========================================
+    const mainFooter = document.getElementById("mainFooter");
+    const floatingScrollTopBtn = document.getElementById("floatingScrollTopBtn");
+
+    // Scroll reveal animation for footer
+    if (mainFooter) {
+      if ("IntersectionObserver" in window) {
+        const footerObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              mainFooter.classList.add("revealed");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: "0px 0px 40px 0px" });
+
+        footerObserver.observe(mainFooter);
+      } else {
+        mainFooter.classList.add("revealed");
+      }
+    }
+
+    // Scroll listener for floating scroll-to-top button & fallback footer reveal
+    window.addEventListener("scroll", () => {
+      const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+      // Show/hide floating scroll button
+      if (scrollPos > 260) {
+        floatingScrollTopBtn?.classList.add("visible");
+      } else {
+        floatingScrollTopBtn?.classList.remove("visible");
+      }
+
+      // Fallback check to ensure footer reveals on quick scroll
+      if (mainFooter && !mainFooter.classList.contains("revealed")) {
+        const rect = mainFooter.getBoundingClientRect();
+        if (rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 60) {
+          mainFooter.classList.add("revealed");
+        }
+      }
+    }, { passive: true });
+
+  </script>
+</body>
+
+</html>
