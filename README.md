@@ -45,4 +45,4 @@ Then visit `http://localhost:8080`.
 - **Reserved by:** [Hreeem.com](https://www.hreeem.com)
 - **Designed & Developed by:** Hreeem Designs
 - **Contact:** [support@hreeem.com](mailto:support@hreeem.com) • WhatsApp: +91 8453036381
-- © 2026 Ramesh & Ramya Wedding. All Rights Reserved.
+- © 2026 [Hreeem.com](https://www.hreeem.com). All Rights Reserved.
