@@ -1229,9 +1229,9 @@
       <span id="floatingMusicIcon" class="material-symbols-outlined text-[19px] transition-transform">music_note</span>
     </button>
 
-    <!-- Background Royal Shehnai Wedding Audio -->
+    <!-- Background Royal Nadaswaram Wedding Audio -->
     <audio id="weddingAudio" loop preload="auto">
-      <source src="./assets/audio/wedding_music.mp3" type="audio/mpeg">
+      <source src="./assets/audio/Wedding_Nadaswaram.mp3" type="audio/mpeg">
     </audio>
 
   </div>
@@ -1848,7 +1848,7 @@
     }
 
     // ------------------------------------------
-    // 9. TRADITIONAL ROYAL WEDDING MUSIC (AUTHENTIC SHEHNAI & MANGALA VADYAM)
+    // 9. TRADITIONAL ROYAL WEDDING MUSIC (AUTHENTIC NADASWARAM MANGALA VADYAM)
     // ------------------------------------------
     let isPlaying = false;
     const weddingAudio = document.getElementById("weddingAudio");
@@ -1866,11 +1866,11 @@
         if (playing) {
           floatingMusicBtn.classList.add("ring-2", "ring-[#fed488]/80", "shadow-[0_0_15px_rgba(254,212,136,0.5)]");
           floatingMusicIcon.textContent = "music_note";
-          floatingMusicBtn.setAttribute("title", "Pause Wedding Shehnai");
+          floatingMusicBtn.setAttribute("title", "Pause Wedding Nadaswaram");
         } else {
           floatingMusicBtn.classList.remove("ring-2", "ring-[#fed488]/80", "shadow-[0_0_15px_rgba(254,212,136,0.5)]");
           floatingMusicIcon.textContent = "music_off";
-          floatingMusicBtn.setAttribute("title", "Play Wedding Shehnai");
+          floatingMusicBtn.setAttribute("title", "Play Wedding Nadaswaram");
         }
       }
       if (musicBtn && musicIcon) {
@@ -1891,7 +1891,7 @@
         playPromise.then(() => {
           isPlaying = true;
           updateMusicUI(true);
-          showToast("Playing Royal Shehnai Melodies 🎶", "music_note");
+          showToast("Playing Royal Nadaswaram Melodies 🎶", "music_note");
         }).catch((err) => {
           console.warn("Audio autoplay blocked by browser policy:", err);
           isPlaying = false;
